@@ -114,10 +114,6 @@ export default function App() {
         }
     ];
 
-    const runScript = React.useCallback(() => {
-        eval(document.getElementById("code").value);
-    }, [])
-
     function workspaceDidChange(workspace) {
         const topBlocks = workspace.getTopBlocks(true);
         let valid = true;
@@ -155,7 +151,7 @@ export default function App() {
                 style={{ height: "400px", width: "400px" }}
                 value=""
             ></textarea>
-            <button onClick={runScript}>Run</button>
+            <button onClick={() => setInterval(document.getElementById("code").value, 0)}>Run</button>
         </>
     );
 }
