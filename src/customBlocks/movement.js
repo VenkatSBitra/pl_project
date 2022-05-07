@@ -4,7 +4,7 @@ Blockly.Blocks["move"] = {
     init: function () {
         this.appendDummyInput()
             .appendField("Move")
-            .appendField(new Blockly.FieldTextInput(""), "steps")
+            .appendField(new Blockly.FieldNumber(0), "steps")
             .appendField("steps");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -15,12 +15,7 @@ Blockly.Blocks["move"] = {
 };
 
 Blockly.JavaScript["move"] = function (block) {
-    let variableName = block.getFieldValue("variableName");
-    let variableValue = Blockly.JavaScript.valueToCode(
-        block,
-        "variableValue",
-        Blockly.JavaScript.ORDER_ATOMIC
-    )
-    let code = `let ${variableName} = ${variableValue};\n`;
+    let steps = block.getFieldValue("steps");
+    let code = `console.log(${steps});\n`;
     return code;
 };

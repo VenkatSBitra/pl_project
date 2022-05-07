@@ -1,5 +1,4 @@
 import "./App.css";
-import "./customBlocks/custom_Blocks";
 import "./customBlocks/expressions";
 import "./customBlocks/operations";
 import "./customBlocks/variables";
@@ -115,6 +114,10 @@ export default function App() {
         }
     ];
 
+    const runScript = React.useCallback(() => {
+        eval(document.getElementById("code").value);
+    }, [])
+
     function workspaceDidChange(workspace) {
         const topBlocks = workspace.getTopBlocks(true);
         let valid = true;
@@ -152,6 +155,7 @@ export default function App() {
                 style={{ height: "400px", width: "400px" }}
                 value=""
             ></textarea>
+            <button onClick={runScript}>Run</button>
         </>
     );
 }
