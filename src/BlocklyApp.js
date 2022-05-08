@@ -110,6 +110,9 @@ const BlocklyApp = () => {
             blocks: [
                 {
                     type: "move"
+                },
+                {
+                    type: "rotate"
                 }
             ]
         }
@@ -123,12 +126,15 @@ const BlocklyApp = () => {
         })
         let code = null;
         if (valid) {
-            code = Blockly.JavaScript.workspaceToCode(workspace);
+            code = Blockly.JavaScript.workspaceToCode(workspace) + 'drawTurtle(context);';
+            if (code.includes('let  =')) {
+                code = 'Ensure all the blocks and statements are filled'
+            }
         } else {
             code = 'Ensure all the blocks and statements are filled'
         }
         fs.writeFile("./bot.js", "code");
-        document.getElementById("code").value = code + 'run()';
+        document.getElementById("code").value = code;
     }
 
     return (

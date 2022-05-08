@@ -10,7 +10,8 @@ Blockly.Blocks["loops_while"] = {
             .setCheck(null)
             .appendField("else");
         this.setInputsInline(true);
-        this.setOutput(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
         this.setColour(105);
     }
 };

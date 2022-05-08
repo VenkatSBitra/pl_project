@@ -22,7 +22,7 @@ Blockly.JavaScript["variable_set"] = function (block) {
         "variableValue",
         Blockly.JavaScript.ORDER_ATOMIC
     )
-    let code = `let ${variableName} = ${variableValue};\n`;
+    let code = `let USER_VAR_${variableName} = ${variableValue};\n`;
     return code;
 };
 
@@ -48,7 +48,7 @@ Blockly.JavaScript["variable_modify"] = function (block) {
         "variableValue",
         Blockly.JavaScript.ORDER_ATOMIC
     );
-    let code = `${variableName} = ${variableValue};\n`;
+    let code = `USER_VAR_${variableName} = ${variableValue};\n`;
     return code;
 };
 
@@ -63,6 +63,6 @@ Blockly.Blocks["variable_get"] = {
 
 Blockly.JavaScript["variable_get"] = function (block) {
     let variableName = block.getFieldValue("value");
-    var code = `${variableName}`;
+    var code = `USER_VAR_${variableName}`;
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
