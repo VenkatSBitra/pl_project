@@ -13,12 +13,12 @@ export default function App() {
             <BlocklyApp />
             <Row>
                 <Col span={6}>
+                    <Button onClick={() => setCommand(document.getElementById("code").value)}>Run</Button>
                     <TextArea 
                         id="code"
                         style={{height: '400px', width: '100%'}}
                         value=""
                     />
-                    <Button onClick={() => setCommand(document.getElementById("code").value)}>Run</Button>
                 </Col>
                 <Col span={18}>
                     <DrawCanvas command={command} width="1000" height="400" style={{border: '1px solid black'}} />
