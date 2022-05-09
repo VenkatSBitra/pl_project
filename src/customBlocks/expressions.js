@@ -12,7 +12,7 @@ Blockly.Blocks["text_expression"] = {
 
 Blockly.JavaScript["text_expression"] = function (block) {
     let variableName = block.getFieldValue("value");
-    var code = `"${variableName}"`;
+    let code = `"${variableName}"`;
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
@@ -28,7 +28,7 @@ Blockly.Blocks["number_expression"] = {
 
 Blockly.JavaScript["number_expression"] = function (block) {
     let variableName = block.getFieldValue("value");
-    var code = `${variableName}`;
+    let code = `${variableName}`;
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
@@ -47,6 +47,6 @@ Blockly.Blocks["boolean_expression"] = {
 
 Blockly.JavaScript["boolean_expression"] = function (block) {
     let variableName = block.getFieldValue("value");
-    var code = `${variableName}`;
+    let code = `${variableName}`;
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

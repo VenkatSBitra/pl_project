@@ -26,7 +26,7 @@ Blockly.JavaScript["add_operation"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_ADDITION 
     );
-    var code = `${number1} + ${number2}`;
+    let code = `${number1} + ${number2}`;
     return [code, Blockly.JavaScript.ORDER_ADDITION];
 };
 
@@ -56,7 +56,7 @@ Blockly.JavaScript["sub_operation"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_SUBTRACTION 
     );
-    var code = `${number1} - ${number2}`;
+    let code = `${number1} - ${number2}`;
     return [code, Blockly.JavaScript.ORDER_SUBTRACTION];
 };
 
@@ -86,7 +86,7 @@ Blockly.JavaScript["mul_operation"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_MULTIPLICATION 
     );
-    var code = `${number1} * ${number2}`;
+    let code = `${number1} * ${number2}`;
     return [code, Blockly.JavaScript.ORDER_MULTIPLICATION];
 };
 
@@ -116,7 +116,7 @@ Blockly.JavaScript["div_operation"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_DIVISION 
     );
-    var code = `${number1} / ${number2}`;
+    let code = `${number1} / ${number2}`;
     return [code, Blockly.JavaScript.ORDER_DIVISION];
 };
 
@@ -146,7 +146,7 @@ Blockly.JavaScript["mod_operation"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_MODULUS 
     );
-    var code = `${number1} % ${number2}`;
+    let code = `${number1} % ${number2}`;
     return [code, Blockly.JavaScript.ORDER_MODULUS];
 };
 
@@ -169,7 +169,7 @@ Blockly.JavaScript["inc_operation"] = function (block) {
         "number1",
         Blockly.JavaScript.ORDER_ATOMIC
     );
-    var code = `${number1} = ${number1} + 1;\n`;
+    let code = `${number1} = ${number1} + 1;\n`;
     return code;
 };
 
@@ -192,6 +192,6 @@ Blockly.JavaScript["dec_operation"] = function (block) {
         "number1",
         Blockly.JavaScript.ORDER_ATOMIC
     );
-    var code = `${number1} = ${number1} - 1;\n`;
+    let code = `${number1} = ${number1} - 1;\n`;
     return code;
 };

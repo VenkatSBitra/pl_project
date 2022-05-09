@@ -63,6 +63,6 @@ Blockly.Blocks["variable_get"] = {
 
 Blockly.JavaScript["variable_get"] = function (block) {
     let variableName = block.getFieldValue("value");
-    var code = `USER_VAR_${variableName}`;
+    let code = `USER_VAR_${variableName}`;
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

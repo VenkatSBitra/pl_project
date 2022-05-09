@@ -62,6 +62,6 @@ Blockly.JavaScript["rotate"] = function (block) {
         Blockly.JavaScript.ORDER_ATOMIC 
     );
     let dir = block.getFieldValue("dir");
-    let code = `draw("${dir === 'l' ? 'lt' : 'rt'} ${degrees}", context);await sleep(${delay});\n`;
+    let code = `loadCanvasDrawing(context);draw("${dir === 'l' ? 'lt' : 'rt'} ${degrees}", context);saveCanvasDrawing(context, canvas);drawTurtle(context);await sleep(${delay});\n`;
     return code;
 };

@@ -25,7 +25,7 @@ Blockly.JavaScript["equals_logic"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_EQUALITY 
     );
-    var code = `${number1} === ${number2}`;
+    let code = `${number1} === ${number2}`;
     return [code, Blockly.JavaScript.ORDER_EQUALITY];
 };
 
@@ -54,7 +54,7 @@ Blockly.JavaScript["not_equals_logic"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_ADDITION 
     );
-    var code = `${number1} !== ${number2}`;
+    let code = `${number1} !== ${number2}`;
     return [code, Blockly.JavaScript.ORDER_EQUALITY];
 };
 
@@ -83,7 +83,7 @@ Blockly.JavaScript["less_than_logic"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_ADDITION 
     );
-    var code = `${number1} < ${number2}`;
+    let code = `${number1} < ${number2}`;
     return [code, Blockly.JavaScript.ORDER_RELATIONAL];
 };
 
@@ -112,7 +112,7 @@ Blockly.JavaScript["greater_than_logic"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_ADDITION 
     );
-    var code = `${number1} > ${number2}`;
+    let code = `${number1} > ${number2}`;
     return [code, Blockly.JavaScript.ORDER_RELATIONAL];
 };
 
@@ -141,7 +141,7 @@ Blockly.JavaScript["less_than_equals_logic"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_ADDITION 
     );
-    var code = `${number1} <= ${number2}`;
+    let code = `${number1} <= ${number2}`;
     return [code, Blockly.JavaScript.ORDER_RELATIONAL];
 };
 
@@ -170,7 +170,7 @@ Blockly.JavaScript["greater_than_equals_logic"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_ADDITION 
     );
-    var code = `${number1} >= ${number2}`;
+    let code = `${number1} >= ${number2}`;
     return [code, Blockly.JavaScript.ORDER_RELATIONAL];
 };
 
@@ -201,7 +201,7 @@ Blockly.JavaScript["and_operation"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_LOGICAL_AND
     );
-    var code = `${number1} && ${number2}`;
+    let code = `${number1} && ${number2}`;
     return [code, Blockly.JavaScript.ORDER_LOGICAL_AND];
 };
 
@@ -231,7 +231,7 @@ Blockly.JavaScript["or_operation"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_LOGICAL_OR
     );
-    var code = `${number1} || ${number2}`;
+    let code = `${number1} || ${number2}`;
     return [code, Blockly.JavaScript.ORDER_LOGICAL_OR];
 };
 
@@ -253,6 +253,6 @@ Blockly.JavaScript["not_operation"] = function (block) {
         "number2",
         Blockly.JavaScript.ORDER_LOGICAL_OR
     );
-    var code = `! (${number2})`;
+    let code = `! (${number2})`;
     return [code, Blockly.JavaScript.ORDER_LOGICAL_OR];
 };
