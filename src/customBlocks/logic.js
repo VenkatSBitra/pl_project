@@ -4,9 +4,9 @@ Blockly.Blocks["equals_logic"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" = ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
@@ -33,9 +33,9 @@ Blockly.Blocks["not_equals_logic"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" != ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
@@ -62,9 +62,9 @@ Blockly.Blocks["less_than_logic"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" < ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
@@ -91,9 +91,9 @@ Blockly.Blocks["greater_than_logic"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" > ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
@@ -120,9 +120,9 @@ Blockly.Blocks["less_than_equals_logic"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" <= ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
@@ -149,9 +149,9 @@ Blockly.Blocks["greater_than_equals_logic"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" >= ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
@@ -178,10 +178,10 @@ Blockly.Blocks["mul_operation"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField("Multiply ")
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
@@ -208,10 +208,10 @@ Blockly.Blocks["div_operation"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField("Divide ")
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
@@ -238,10 +238,10 @@ Blockly.Blocks["mod_operation"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField("Modulo of ")
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);

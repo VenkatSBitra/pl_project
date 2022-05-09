@@ -72,6 +72,10 @@ const DrawCanvas = props => {
         ctx.stroke()
     }
 
+    const sleep = (milliseconds) => {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
+    }
+
     const draw = (command, ctx) => {
         const { dir, angle, value } = parseCmd(command)
         console.log(dir, angle, value)

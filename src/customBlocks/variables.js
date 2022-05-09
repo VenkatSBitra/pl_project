@@ -56,7 +56,7 @@ Blockly.Blocks["variable_get"] = {
     init: function () {
         this.appendDummyInput()
             .appendField(new Blockly.FieldTextInput(""), "value");
-        this.setOutput(true);
+        this.setOutput(true, 'Variable');
         this.setColour(105);
     }
 };

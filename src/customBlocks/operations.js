@@ -154,10 +154,11 @@ Blockly.Blocks["inc_operation"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck('Variable')
             .appendField("Increment ");
         this.setInputsInline(true);
-        this.setOutput(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
         this.setColour(105);
     }
 };
@@ -168,6 +169,6 @@ Blockly.JavaScript["inc_operation"] = function (block) {
         "number1",
         Blockly.JavaScript.ORDER_ADDITION 
     );
-    var code = `${number1} + 1`;
-    return [code, Blockly.JavaScript.ORDER_ADDITION];
+    var code = `${number1} = ${number1} + 1;\n`;
+    return code;
 };
