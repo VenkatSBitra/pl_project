@@ -116,6 +116,9 @@ const BlocklyApp = () => {
                 },
                 {
                     type: "loops_while"
+                },
+                {
+                    type: "loops_for"
                 }
             ]
         },
@@ -141,7 +144,7 @@ const BlocklyApp = () => {
         })
         let code = null;
         if (valid) {
-            code = 'async function USER_BLOCK_FN() {\n' + Blockly.JavaScript.workspaceToCode(workspace) + 'drawTurtle(context);\n}\nUSER_BLOCK_FN();';
+            code = 'async function USER_BLOCK_FN() {\n' + Blockly.JavaScript.workspaceToCode(workspace) + '\n}\nUSER_BLOCK_FN();';
             if (code.includes('let  =')) {
                 code = 'Ensure all the blocks and statements are filled'
             }

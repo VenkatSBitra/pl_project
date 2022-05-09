@@ -40,7 +40,7 @@ Blockly.Blocks["boolean_expression"] = {
                 ['true', 'true'],
                 ['false', 'false']
             ]), "value");
-        this.setOutput(true);
+        this.setOutput(true,Boolean);
         this.setColour("#66cc00");
     }
 };
