@@ -101,6 +101,9 @@ const BlocklyApp = () => {
                 },
                 {
                     type: "or_operation"
+                },
+                {
+                    type: "not_operation"
                 }
             ]
         },

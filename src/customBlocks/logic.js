@@ -272,7 +272,7 @@ Blockly.Blocks["and_operation"] = {
 
         this.appendValueInput("number2")
             .setCheck([Boolean, 'Variable'])
-            .appendField(" && ");;
+            .appendField(" and ");;
         this.setInputsInline(true);
         this.setOutput(true);
         this.setColour(105);
@@ -302,7 +302,7 @@ Blockly.Blocks["or_operation"] = {
 
         this.appendValueInput("number2")
             .setCheck([Boolean, 'Variable'])
-            .appendField(" || ");;
+            .appendField(" or ");;
         this.setInputsInline(true);
         this.setOutput(true);
         this.setColour(105);
@@ -321,5 +321,27 @@ Blockly.JavaScript["or_operation"] = function (block) {
         Blockly.JavaScript.ORDER_LOGICAL_OR
     );
     var code = `${number1} || ${number2}`;
+    return [code, Blockly.JavaScript.ORDER_LOGICAL_OR];
+};
+
+Blockly.Blocks["not_operation"] = {
+    init: function () {
+        this.appendDummyInput();
+        this.appendValueInput("number2")
+            .setCheck([Boolean, 'Variable'])
+            .appendField(" not ");;
+        this.setInputsInline(true);
+        this.setOutput(true);
+        this.setColour(105);
+    }
+};
+
+Blockly.JavaScript["not_operation"] = function (block) {
+    let number2 = Blockly.JavaScript.valueToCode(
+        block,
+        "number2",
+        Blockly.JavaScript.ORDER_LOGICAL_OR
+    );
+    var code = `! (${number2})`;
     return [code, Blockly.JavaScript.ORDER_LOGICAL_OR];
 };
