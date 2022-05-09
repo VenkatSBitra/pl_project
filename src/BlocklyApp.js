@@ -98,6 +98,9 @@ const BlocklyApp = () => {
                 },
                 {
                     type: "and_operation"
+                },
+                {
+                    type: "or_operation"
                 }
             ]
         },
