@@ -68,6 +68,9 @@ const BlocklyApp = () => {
                 },
                 {
                     type: "inc_operation"
+                },
+                {
+                    type: "dec_operation"
                 }
             ]
         },
@@ -93,6 +96,9 @@ const BlocklyApp = () => {
                 {
                     type: "greater_than_equals_logic"
                 },
+                {
+                    type: "and_operation"
+                }
             ]
         },
         {

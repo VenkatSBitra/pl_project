@@ -49,15 +49,15 @@ Blockly.JavaScript["sub_operation"] = function (block) {
     let number1 = Blockly.JavaScript.valueToCode(
         block,
         "number1",
-        Blockly.JavaScript.ORDER_ADDITION 
+        Blockly.JavaScript.ORDER_SUBTRACTION 
     );
     let number2 = Blockly.JavaScript.valueToCode(
         block,
         "number2",
-        Blockly.JavaScript.ORDER_ADDITION 
+        Blockly.JavaScript.ORDER_SUBTRACTION 
     );
     var code = `${number1} - ${number2}`;
-    return [code, Blockly.JavaScript.ORDER_ADDITION];
+    return [code, Blockly.JavaScript.ORDER_SUBTRACTION];
 };
 
 Blockly.Blocks["mul_operation"] = {
@@ -79,15 +79,15 @@ Blockly.JavaScript["mul_operation"] = function (block) {
     let number1 = Blockly.JavaScript.valueToCode(
         block,
         "number1",
-        Blockly.JavaScript.ORDER_ADDITION 
+        Blockly.JavaScript.ORDER_MULTIPLICATION 
     );
     let number2 = Blockly.JavaScript.valueToCode(
         block,
         "number2",
-        Blockly.JavaScript.ORDER_ADDITION 
+        Blockly.JavaScript.ORDER_MULTIPLICATION 
     );
     var code = `${number1} * ${number2}`;
-    return [code, Blockly.JavaScript.ORDER_ADDITION];
+    return [code, Blockly.JavaScript.ORDER_MULTIPLICATION];
 };
 
 Blockly.Blocks["div_operation"] = {
@@ -109,15 +109,15 @@ Blockly.JavaScript["div_operation"] = function (block) {
     let number1 = Blockly.JavaScript.valueToCode(
         block,
         "number1",
-        Blockly.JavaScript.ORDER_ADDITION 
+        Blockly.JavaScript.ORDER_DIVISION 
     );
     let number2 = Blockly.JavaScript.valueToCode(
         block,
         "number2",
-        Blockly.JavaScript.ORDER_ADDITION 
+        Blockly.JavaScript.ORDER_DIVISION 
     );
     var code = `${number1} / ${number2}`;
-    return [code, Blockly.JavaScript.ORDER_ADDITION];
+    return [code, Blockly.JavaScript.ORDER_DIVISION];
 };
 
 Blockly.Blocks["mod_operation"] = {
@@ -139,15 +139,15 @@ Blockly.JavaScript["mod_operation"] = function (block) {
     let number1 = Blockly.JavaScript.valueToCode(
         block,
         "number1",
-        Blockly.JavaScript.ORDER_ADDITION 
+        Blockly.JavaScript.ORDER_MODULUS
     );
     let number2 = Blockly.JavaScript.valueToCode(
         block,
         "number2",
-        Blockly.JavaScript.ORDER_ADDITION 
+        Blockly.JavaScript.ORDER_MODULUS 
     );
     var code = `${number1} % ${number2}`;
-    return [code, Blockly.JavaScript.ORDER_ADDITION];
+    return [code, Blockly.JavaScript.ORDER_MODULUS];
 };
 
 Blockly.Blocks["inc_operation"] = {
@@ -167,8 +167,31 @@ Blockly.JavaScript["inc_operation"] = function (block) {
     let number1 = Blockly.JavaScript.valueToCode(
         block,
         "number1",
-        Blockly.JavaScript.ORDER_ADDITION 
+        Blockly.JavaScript.ORDER_ATOMIC
     );
     var code = `${number1} = ${number1} + 1;\n`;
+    return code;
+};
+
+Blockly.Blocks["dec_operation"] = {
+    init: function () {
+        this.appendDummyInput();
+        this.appendValueInput("number1")
+            .setCheck('Variable')
+            .appendField("Decrement ");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(105);
+    }
+};
+
+Blockly.JavaScript["dec_operation"] = function (block) {
+    let number1 = Blockly.JavaScript.valueToCode(
+        block,
+        "number1",
+        Blockly.JavaScript.ORDER_ATOMIC
+    );
+    var code = `${number1} = ${number1} - 1;\n`;
     return code;
 };
