@@ -19,7 +19,7 @@ const BlocklyApp = () => {
     const toolboxCategories = [
         {
             name: "Variables",
-            colour: "#5CA699",
+            colour: "#cc7a00",
             blocks: [
                 {
                     type: "variable_set"
@@ -34,7 +34,7 @@ const BlocklyApp = () => {
         },
         {
             name: "Expressions",
-            colour: "#5CA699",
+            colour: "#66cc00",
             blocks: [
                 {
                     type: "text_expression"
@@ -49,7 +49,7 @@ const BlocklyApp = () => {
         },
         {
             name: "Operations",
-            colour: "#5C81A6",
+            colour: "#33cccc",
             blocks: [
                 {
                     type: "add_operation"
@@ -76,7 +76,7 @@ const BlocklyApp = () => {
         },
         {
             name: "Logic",
-            colour: "#5C81A6",
+            colour: "#990099",
             blocks: [
                 {
                     type: "equals_logic"
@@ -101,12 +101,15 @@ const BlocklyApp = () => {
                 },
                 {
                     type: "or_operation"
+                },
+                {
+                    type: "not_operation"
                 }
             ]
         },
         {
             name: "Control",
-            colour: "#5C81A6",
+            colour: "#ff3300",
             blocks: [
                 {
                     type: "if_conditional"
@@ -118,7 +121,7 @@ const BlocklyApp = () => {
         },
         {
             name: "Motion",
-            colour: "#5C81A6",
+            colour: "#00b377",
             blocks: [
                 {
                     type: "move"

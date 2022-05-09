@@ -11,7 +11,7 @@ Blockly.Blocks["variable_set"] = {
         this.setInputsInline(true);
         this.setNextStatement(true);
         this.setPreviousStatement(true);
-        this.setColour(105);
+        this.setColour("#cc7a00");
     }
 };
 
@@ -34,7 +34,7 @@ Blockly.Blocks["variable_modify"] = {
             .appendField(" to ");
         this.appendValueInput("variableValue")
             .setCheck(null);
-        this.setColour(105);        
+        this.setColour("#cc7a00");        
         this.setInputsInline(true);
         this.setNextStatement(true);
         this.setPreviousStatement(true);
@@ -57,7 +57,7 @@ Blockly.Blocks["variable_get"] = {
         this.appendDummyInput()
             .appendField(new Blockly.FieldTextInput(""), "value");
         this.setOutput(true, 'Variable');
-        this.setColour(105);
+        this.setColour("#cc7a00");
     }
 };
 

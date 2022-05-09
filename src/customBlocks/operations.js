@@ -11,7 +11,7 @@ Blockly.Blocks["add_operation"] = {
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
-        this.setColour(105);
+        this.setColour("#33cccc");
     }
 };
 
@@ -41,7 +41,7 @@ Blockly.Blocks["sub_operation"] = {
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
-        this.setColour(105);
+        this.setColour("#33cccc");
     }
 };
 
@@ -71,7 +71,7 @@ Blockly.Blocks["mul_operation"] = {
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
-        this.setColour(105);
+        this.setColour("#33cccc");
     }
 };
 
@@ -101,7 +101,7 @@ Blockly.Blocks["div_operation"] = {
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
-        this.setColour(105);
+        this.setColour("#33cccc");
     }
 };
 
@@ -131,7 +131,7 @@ Blockly.Blocks["mod_operation"] = {
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
-        this.setColour(105);
+        this.setColour("#33cccc");
     }
 };
 
@@ -159,7 +159,7 @@ Blockly.Blocks["inc_operation"] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(105);
+        this.setColour("#33cccc");
     }
 };
 
@@ -182,7 +182,7 @@ Blockly.Blocks["dec_operation"] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(105);
+        this.setColour("#33cccc");
     }
 };
 

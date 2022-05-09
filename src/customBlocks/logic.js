@@ -10,7 +10,7 @@ Blockly.Blocks["equals_logic"] = {
             .appendField(" = ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
-        this.setColour(105);
+        this.setColour("#990099");
     }
 };
 
@@ -39,7 +39,7 @@ Blockly.Blocks["not_equals_logic"] = {
             .appendField(" != ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
-        this.setColour(105);
+        this.setColour("#990099");
     }
 };
 
@@ -68,7 +68,7 @@ Blockly.Blocks["less_than_logic"] = {
             .appendField(" < ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
-        this.setColour(105);
+        this.setColour("#990099");
     }
 };
 
@@ -97,7 +97,7 @@ Blockly.Blocks["greater_than_logic"] = {
             .appendField(" > ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
-        this.setColour(105);
+        this.setColour("#990099");
     }
 };
 
@@ -126,7 +126,7 @@ Blockly.Blocks["less_than_equals_logic"] = {
             .appendField(" <= ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
-        this.setColour(105);
+        this.setColour("#990099");
     }
 };
 
@@ -155,7 +155,7 @@ Blockly.Blocks["greater_than_equals_logic"] = {
             .appendField(" >= ");;
         this.setInputsInline(true);
         this.setOutput(true, Boolean);
-        this.setColour(105);
+        this.setColour("#990099");
     }
 };
 
@@ -174,95 +174,6 @@ Blockly.JavaScript["greater_than_equals_logic"] = function (block) {
     return [code, Blockly.JavaScript.ORDER_RELATIONAL];
 };
 
-Blockly.Blocks["mul_operation"] = {
-    init: function () {
-        this.appendDummyInput();
-        this.appendValueInput("number1")
-            .setCheck([Number, 'Variable'])
-            .appendField("Multiply ")
-        this.appendValueInput("number2")
-            .setCheck([Number, 'Variable'])
-            .appendField(" with ");;
-        this.setInputsInline(true);
-        this.setOutput(true);
-        this.setColour(105);
-    }
-};
-
-Blockly.JavaScript["mul_operation"] = function (block) {
-    let number1 = Blockly.JavaScript.valueToCode(
-        block,
-        "number1",
-        Blockly.JavaScript.ORDER_ADDITION 
-    );
-    let number2 = Blockly.JavaScript.valueToCode(
-        block,
-        "number2",
-        Blockly.JavaScript.ORDER_ADDITION 
-    );
-    var code = `${number1} * ${number2}`;
-    return [code, Blockly.JavaScript.ORDER_ADDITION];
-};
-
-Blockly.Blocks["div_operation"] = {
-    init: function () {
-        this.appendDummyInput();
-        this.appendValueInput("number1")
-            .setCheck([Number, 'Variable'])
-            .appendField("Divide ")
-        this.appendValueInput("number2")
-            .setCheck([Number, 'Variable'])
-            .appendField(" with ");;
-        this.setInputsInline(true);
-        this.setOutput(true);
-        this.setColour(105);
-    }
-};
-
-Blockly.JavaScript["div_operation"] = function (block) {
-    let number1 = Blockly.JavaScript.valueToCode(
-        block,
-        "number1",
-        Blockly.JavaScript.ORDER_ADDITION 
-    );
-    let number2 = Blockly.JavaScript.valueToCode(
-        block,
-        "number2",
-        Blockly.JavaScript.ORDER_ADDITION 
-    );
-    var code = `${number1} / ${number2}`;
-    return [code, Blockly.JavaScript.ORDER_ADDITION];
-};
-
-Blockly.Blocks["mod_operation"] = {
-    init: function () {
-        this.appendDummyInput();
-        this.appendValueInput("number1")
-            .setCheck([Number, 'Variable'])
-            .appendField("Modulo of ")
-        this.appendValueInput("number2")
-            .setCheck([Number, 'Variable'])
-            .appendField(" with ");;
-        this.setInputsInline(true);
-        this.setOutput(true);
-        this.setColour(105);
-    }
-};
-
-Blockly.JavaScript["mod_operation"] = function (block) {
-    let number1 = Blockly.JavaScript.valueToCode(
-        block,
-        "number1",
-        Blockly.JavaScript.ORDER_ADDITION 
-    );
-    let number2 = Blockly.JavaScript.valueToCode(
-        block,
-        "number2",
-        Blockly.JavaScript.ORDER_ADDITION 
-    );
-    var code = `${number1} % ${number2}`;
-    return [code, Blockly.JavaScript.ORDER_ADDITION];
-};
 
 Blockly.Blocks["and_operation"] = {
     init: function () {
@@ -272,10 +183,10 @@ Blockly.Blocks["and_operation"] = {
 
         this.appendValueInput("number2")
             .setCheck([Boolean, 'Variable'])
-            .appendField(" && ");;
+            .appendField(" and ");;
         this.setInputsInline(true);
         this.setOutput(true);
-        this.setColour(105);
+        this.setColour("#990099");
     }
 };
 
@@ -302,10 +213,10 @@ Blockly.Blocks["or_operation"] = {
 
         this.appendValueInput("number2")
             .setCheck([Boolean, 'Variable'])
-            .appendField(" || ");;
+            .appendField(" or ");;
         this.setInputsInline(true);
         this.setOutput(true);
-        this.setColour(105);
+        this.setColour("#990099");
     }
 };
 
@@ -321,5 +232,27 @@ Blockly.JavaScript["or_operation"] = function (block) {
         Blockly.JavaScript.ORDER_LOGICAL_OR
     );
     var code = `${number1} || ${number2}`;
+    return [code, Blockly.JavaScript.ORDER_LOGICAL_OR];
+};
+
+Blockly.Blocks["not_operation"] = {
+    init: function () {
+        this.appendDummyInput();
+        this.appendValueInput("number2")
+            .setCheck([Boolean, 'Variable'])
+            .appendField(" not ");;
+        this.setInputsInline(true);
+        this.setOutput(true);
+        this.setColour("#990099");
+    }
+};
+
+Blockly.JavaScript["not_operation"] = function (block) {
+    let number2 = Blockly.JavaScript.valueToCode(
+        block,
+        "number2",
+        Blockly.JavaScript.ORDER_LOGICAL_OR
+    );
+    var code = `! (${number2})`;
     return [code, Blockly.JavaScript.ORDER_LOGICAL_OR];
 };

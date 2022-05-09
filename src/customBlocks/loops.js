@@ -11,7 +11,7 @@ Blockly.Blocks["loops_while"] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(105);
+        this.setColour("#ff3300");
     }
 };
 
