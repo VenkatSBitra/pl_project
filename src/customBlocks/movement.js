@@ -17,7 +17,7 @@ Blockly.Blocks["move"] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);        
         this.setInputsInline(true);
-        this.setColour(230);
+        this.setColour("#00b377");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -49,7 +49,7 @@ Blockly.Blocks["rotate"] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setInputsInline(true);
-        this.setColour(230);
+        this.setColour("#00b377");
         this.setTooltip("");
         this.setHelpUrl("");
     }
