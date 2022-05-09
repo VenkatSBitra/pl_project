@@ -68,6 +68,9 @@ const BlocklyApp = () => {
                 },
                 {
                     type: "inc_operation"
+                },
+                {
+                    type: "dec_operation"
                 }
             ]
         },
