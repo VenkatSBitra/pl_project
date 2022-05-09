@@ -11,6 +11,7 @@ import "./customBlocks/logic"
 import "./customBlocks/conditionals";
 import "./customBlocks/loops";
 import "./customBlocks/movement";
+import "./customBlocks/shapes";
 
 const BlocklyApp = () => {
     const initialXml =
@@ -116,6 +117,9 @@ const BlocklyApp = () => {
                 },
                 {
                     type: "loops_while"
+                },
+                {
+                    type: "loops_for"
                 }
             ]
         },
@@ -130,6 +134,24 @@ const BlocklyApp = () => {
                     type: "rotate"
                 }
             ]
+        },
+        {
+            name: "Shapes",
+            colour: "ff6699",
+            blocks: [
+                {
+                    type : "square"
+                },
+                {
+                    type : "rectangle"
+                },
+                {
+                    type: "circle"
+                },
+                {
+                    type : "set_position"
+                }
+            ]
         }
     ];
 
@@ -141,7 +163,7 @@ const BlocklyApp = () => {
         })
         let code = null;
         if (valid) {
-            code = 'async function USER_BLOCK_FN() {\n' + Blockly.JavaScript.workspaceToCode(workspace) + 'drawTurtle(context);\n}\nUSER_BLOCK_FN();';
+            code = 'async function USER_BLOCK_FN() {\n' + Blockly.JavaScript.workspaceToCode(workspace) + '\n}\nUSER_BLOCK_FN();';
             if (code.includes('let  =')) {
                 code = 'Ensure all the blocks and statements are filled'
             }
