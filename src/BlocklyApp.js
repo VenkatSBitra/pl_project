@@ -65,6 +65,9 @@ const BlocklyApp = () => {
                 },
                 {
                     type: "mod_operation"
+                },
+                {
+                    type: "inc_operation"
                 }
             ]
         },
@@ -133,8 +136,8 @@ const BlocklyApp = () => {
         } else {
             code = 'Ensure all the blocks and statements are filled'
         }
-        fs.writeFile("./bot.js", "code");
-        document.getElementById("code").value = code;
+        fs.writeFile("./bot.js", code);
+        if (document.getElementById("code")) document.getElementById("code").value = code;
     }
 
     return (

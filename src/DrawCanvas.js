@@ -2,9 +2,14 @@ import React from "react";
 
 const DrawCanvas = props => {
     const canvasRef = React.useRef(null);
-    const { command, ...rest} = props;
+    let { command, resetFn, ...rest} = props;
 
     React.useEffect(() => {
+        if (command.includes('while')) {
+            if (!window.confirm('Are you sure all while loops are terminating?')) {
+                command = 'Ensure all the blocks and statements are filled'
+            }
+        }
         if (command === 'Ensure all the blocks and statements are filled') {}
         else {
             const canvas = canvasRef.current;
@@ -13,17 +18,15 @@ const DrawCanvas = props => {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.save();
             context.translate(canvas.width / 2, canvas.height / 2);
-            console.log(command);
-            const move = () => {
-                try {
-                    eval(command); 
-                } catch (e) {
-                    if (e instanceof SyntaxError) {
-                        alert(e.message);
-                    }
+            try {
+                eval(command); 
+            } catch (e) {
+                if (e instanceof SyntaxError) {
+                    alert(e.message);
+                } else { 
+                    alert(e)
                 }
-            };
-            move();
+            }
         }
     }, [command]);
 

@@ -7,8 +7,7 @@ Blockly.Blocks["loops_while"] = {
             .setCheck(Boolean)
             .appendField("while ");
         this.appendStatementInput("statement")
-            .setCheck(null)
-            .appendField("else");
+            .setCheck(null);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
