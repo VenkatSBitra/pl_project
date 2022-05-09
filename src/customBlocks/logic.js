@@ -263,3 +263,33 @@ Blockly.JavaScript["mod_operation"] = function (block) {
     var code = `${number1} % ${number2}`;
     return [code, Blockly.JavaScript.ORDER_ADDITION];
 };
+
+Blockly.Blocks["and_operation"] = {
+    init: function () {
+        this.appendDummyInput();
+        this.appendValueInput("number1")
+            .setCheck([Boolean, 'Variable'])
+
+        this.appendValueInput("number2")
+            .setCheck([Boolean, 'Variable'])
+            .appendField(" && ");;
+        this.setInputsInline(true);
+        this.setOutput(true);
+        this.setColour(105);
+    }
+};
+
+Blockly.JavaScript["and_operation"] = function (block) {
+    let number1 = Blockly.JavaScript.valueToCode(
+        block,
+        "number1",
+        Blockly.JavaScript.ORDER_LOGICAL_AND
+    );
+    let number2 = Blockly.JavaScript.valueToCode(
+        block,
+        "number2",
+        Blockly.JavaScript.ORDER_LOGICAL_AND
+    );
+    var code = `${number1} && ${number2}`;
+    return [code, Blockly.JavaScript.ORDER_LOGICAL_AND];
+};

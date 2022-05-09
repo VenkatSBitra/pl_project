@@ -96,6 +96,9 @@ const BlocklyApp = () => {
                 {
                     type: "greater_than_equals_logic"
                 },
+                {
+                    type: "and_operation"
+                }
             ]
         },
         {
