@@ -11,6 +11,7 @@ import "./customBlocks/logic"
 import "./customBlocks/conditionals";
 import "./customBlocks/loops";
 import "./customBlocks/movement";
+import "./customBlocks/shapes";
 
 const BlocklyApp = () => {
     const initialXml =
@@ -131,6 +132,24 @@ const BlocklyApp = () => {
                 },
                 {
                     type: "rotate"
+                }
+            ]
+        },
+        {
+            name: "Shapes",
+            colour: "ff6699",
+            blocks: [
+                {
+                    type : "square"
+                },
+                {
+                    type : "rectangle"
+                },
+                {
+                    type: "circle"
+                },
+                {
+                    type : "set_position"
                 }
             ]
         }
