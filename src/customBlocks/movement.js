@@ -30,7 +30,7 @@ Blockly.JavaScript["move"] = function (block) {
         Blockly.JavaScript.ORDER_ATOMIC 
     );
     let dir = block.getFieldValue("dir");
-    let code = `draw("${dir === 'f' ? 'fd' : 'bk'} ${steps}", context);await sleep(${delay});\n`;
+    let code = `loadCanvasDrawing(context);draw("${dir === 'f' ? 'fd' : 'bk'} ${steps}", context);saveCanvasDrawing(context, canvas);drawTurtle(context);await sleep(${delay});\n`;
     return code;
 };
 

@@ -3,6 +3,7 @@ import React from "react";
 const DrawCanvas = props => {
     const canvasRef = React.useRef(null);
     let { command, resetFn, ...rest} = props;
+    const currCanvas = React.useRef(null);
 
     React.useEffect(() => {
         if (command.includes('while')) {
@@ -18,6 +19,7 @@ const DrawCanvas = props => {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.save();
             context.translate(canvas.width / 2, canvas.height / 2);
+            saveCanvasDrawing(context, canvas);
             try {
                 eval(command); 
             } catch (e) {
@@ -29,6 +31,14 @@ const DrawCanvas = props => {
             }
         }
     }, [command]);
+
+    const saveCanvasDrawing = (context, canvas) => {
+        currCanvas.current = context.getImageData(0, 0, canvas.width, canvas.height);
+    }
+
+    const loadCanvasDrawing = context => {
+        context.putImageData(currCanvas.current, 0, 0);
+    }
 
     const parseCmd = command => {
         let [dir, value] = command.split(" ")
