@@ -6,7 +6,7 @@ Blockly.Blocks["text_expression"] = {
             .appendField("String: ")
             .appendField(new Blockly.FieldTextInput(""), "value");
         this.setOutput(true, String);
-        this.setColour(105);
+        this.setColour("#66cc00");
     }
 };
 
@@ -22,7 +22,7 @@ Blockly.Blocks["number_expression"] = {
             .appendField("Number: ")
             .appendField(new Blockly.FieldNumber(0), "value");
         this.setOutput(true, Number);
-        this.setColour(105);
+        this.setColour("#66cc00");
     }
 };
 
@@ -41,7 +41,7 @@ Blockly.Blocks["boolean_expression"] = {
                 ['false', 'false']
             ]), "value");
         this.setOutput(true);
-        this.setColour(105);
+        this.setColour("#66cc00");
     }
 };
 
