@@ -29,8 +29,9 @@ Blockly.JavaScript["move"] = function (block) {
         "steps",
         Blockly.JavaScript.ORDER_ATOMIC 
     );
-    let dir = block.getFieldValue("dir");
-    let code = `loadCanvasDrawing(context);draw("${dir === 'f' ? 'fd' : 'bk'} ${steps}", context);saveCanvasDrawing(context, canvas);drawTurtle(context);await sleep(${delay});\n`;
+    let dir = block.getFieldValue("dir");    
+    let check = isNaN(steps);
+    let code = `loadCanvasDrawing(context);draw("${dir === 'f' ? 'fd' : 'bk'} ${(!check) ? (steps + '"') : ('" + (' + steps + ').toString(10)')}, context);saveCanvasDrawing(context, canvas);drawTurtle(context);await sleep(${delay});\n`;
     return code;
 };
 
@@ -62,7 +63,8 @@ Blockly.JavaScript["rotate"] = function (block) {
         Blockly.JavaScript.ORDER_ATOMIC 
     );
     let dir = block.getFieldValue("dir");
-    let code = `loadCanvasDrawing(context);draw("${dir === 'l' ? 'lt' : 'rt'} ${degrees}", context);saveCanvasDrawing(context, canvas);drawTurtle(context);await sleep(${delay});\n`;
+    let check = isNaN(degrees);
+    let code = `loadCanvasDrawing(context);draw("${dir === 'l' ? 'lt' : 'rt'} ${(!check) ? (degrees + '"') : ('" + (' + degrees + ').toString(10)')}, context);saveCanvasDrawing(context, canvas);drawTurtle(context);await sleep(${delay});\n`;
     return code;
 };
 
