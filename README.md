@@ -1,8 +1,6 @@
 
 # Getting Started with Visual Programming 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Instructions to run :
 
 In the project directory, you can run:
