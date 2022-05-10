@@ -92,14 +92,14 @@ Blockly.Blocks["if_conditional"] = {
         this.list_.forEach(((e, i) => {
             if (e === 'if') {
                 this.appendValueInput("condition_"+i)
-                    .setCheck(null)
+                    .setCheck([Boolean, 'Variable'])
                     .appendField("if");
                 this.appendStatementInput("statement_"+i)
                     .setCheck(null)
                     .appendField("then");
             } else if (e === 'else_if') {
                 this.appendValueInput("condition_"+i)
-                    .setCheck(null)
+                    .setCheck([Boolean, 'Variable'])
                     .appendField("else if");
                 this.appendStatementInput("statement_"+i)
                     .setCheck(null)

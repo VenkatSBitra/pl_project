@@ -4,8 +4,8 @@ Blockly.Blocks["loops_while"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("condition")
-            .setCheck(Boolean)
-            .appendField("while ");
+            .setCheck([Boolean, 'Variable'])
+            .appendField("repeat till ");
         this.appendStatementInput("statement")
             .setCheck(null);
         this.setInputsInline(true);
