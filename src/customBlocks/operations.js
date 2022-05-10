@@ -4,10 +4,10 @@ Blockly.Blocks["add_operation"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField("Add ")
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
@@ -34,10 +34,10 @@ Blockly.Blocks["sub_operation"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField("Subtract ")
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
@@ -64,10 +64,10 @@ Blockly.Blocks["mul_operation"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField("Multiply ")
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
@@ -94,10 +94,10 @@ Blockly.Blocks["div_operation"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField("Divide ")
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
@@ -124,10 +124,10 @@ Blockly.Blocks["mod_operation"] = {
     init: function () {
         this.appendDummyInput();
         this.appendValueInput("number1")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField("Modulo of ")
         this.appendValueInput("number2")
-            .setCheck(Number)
+            .setCheck([Number, 'Variable'])
             .appendField(" with ");;
         this.setInputsInline(true);
         this.setOutput(true);
