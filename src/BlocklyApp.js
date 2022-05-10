@@ -132,6 +132,15 @@ const BlocklyApp = () => {
                 },
                 {
                     type: "rotate"
+                },
+                {
+                    type : "set_position"
+                },
+                {
+                    type : "penup"
+                },
+                {
+                    type : "pendown"
                 }
             ]
         },
@@ -147,9 +156,6 @@ const BlocklyApp = () => {
                 },
                 {
                     type: "circle"
-                },
-                {
-                    type : "set_position"
                 }
             ]
         }

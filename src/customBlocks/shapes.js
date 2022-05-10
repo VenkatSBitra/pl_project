@@ -124,7 +124,7 @@ Blockly.Blocks["circle"] = {
 
         this.appendValueInput("radius")
             .setCheck(Number)
-            .appendField("Step Size ")
+            .appendField("Radius ")
         
         this.appendValueInput("x_dis")
             .setCheck(Number)
@@ -160,50 +160,11 @@ Blockly.JavaScript["circle"] = function (block) {
 
     let code = `
         loadCanvasDrawing(context);
-        context.translate(${(Number(x_dis) + Number(radius))}, ${(Number(y_dis) + Number(radius))});
-        for (let USER_VAR_SQUARE_LOOP = 0; USER_VAR_SQUARE_LOOP < 360; USER_VAR_SQUARE_LOOP++) {
-            draw("fd ${radius}", context);
-            draw("rt 1", context);
-        }
-        context.translate(${-1 * (Number(x_dis) + Number(radius))}, ${-1 * (Number(y_dis) + Number(radius))});
+        context.beginPath();
+        context.arc(${x_dis}, ${y_dis}, ${radius}, 0, 2 * Math.PI);
+        context.stroke();
         saveCanvasDrawing(context, canvas);drawTurtle(context);
     `;
     return code;
 };
 
-Blockly.Blocks["set_position"] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField("Translate: ");
-        
-        this.appendValueInput("x_dis")
-            .setCheck(Number)
-            .appendField("x ")
-        
-        this.appendValueInput("y_dis")
-            .setCheck(Number)
-            .appendField("y ");
-        
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("#ff6699");
-    }
-};
-
-Blockly.JavaScript["set_position"] = function (block) {
-    let x_dis = Blockly.JavaScript.valueToCode(
-        block,
-        "x_dis",
-        Blockly.JavaScript.ORDER_ADDITION 
-    );
-
-    let y_dis = Blockly.JavaScript.valueToCode(
-        block,
-        "y_dis",
-        Blockly.JavaScript.ORDER_ADDITION 
-    );
-     
-    let code = `context.translate(${x_dis}, ${y_dis});drawTurtle(context);`;
-    return code;
-};

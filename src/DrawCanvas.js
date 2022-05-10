@@ -74,12 +74,15 @@ const DrawCanvas = props => {
     }
 
     const drawTurtle = ctx => {
+        const stroke = ctx.strokeStyle
+        ctx.strokeStyle = "rgb(0, 0, 0)"
         ctx.beginPath()
         ctx.moveTo(-7, -7)
         ctx.lineTo(0, 7)
         ctx.lineTo(7, -7)
         ctx.closePath()
         ctx.stroke()
+        ctx.strokeStyle = stroke
     }
 
     const sleep = (milliseconds) => {
@@ -98,6 +101,14 @@ const DrawCanvas = props => {
             ctx.closePath()
             ctx.stroke()
         }
+    }
+
+    const pendown = (ctx) => {
+        ctx.strokeStyle = "rgb(0, 0, 0)"
+    }
+
+    const penup = (ctx) => {
+        ctx.strokeStyle = "rgb(255, 255, 255)"
     }
 
     return <canvas ref={canvasRef} {...rest} />

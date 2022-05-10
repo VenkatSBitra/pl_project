@@ -20,6 +20,7 @@ export default function App() {
                 </Col>
                 <Col span={10}>
                     <Button onClick={() => setCommand(document.getElementById("code").value)}>Run</Button>
+                    <Button onClick={() => setCommand('async function USER_BLOCK_FN() {drawTurtle(context);}\nUSER_BLOCK_FN();')}>Reset</Button>
                     <DrawCanvas command={command} width="625" height="600" style={{border: '1px solid black'}} />
                 </Col>
             </Row>
@@ -28,6 +29,7 @@ export default function App() {
                 <Col span={24}>
                     <Typography>JavaScript Code:</Typography>
                     <Button onClick={() => setCommand(document.getElementById("code").value)}>Run</Button>
+                    <Button onClick={() => setCommand('async function USER_BLOCK_FN() {drawTurtle();}\nUSER_BLOCK_FN();')}>Reset</Button>
                     <TextArea 
                         id="code"
                         style={{height: '400px', width: '100%'}}
