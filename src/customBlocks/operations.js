@@ -45,6 +45,51 @@ Blockly.Blocks["sub_operation"] = {
     }
 };
 
+Blockly.Blocks["add_operation2"] = {
+    init: function () {
+        this.appendDummyInput();
+        this.appendValueInput("number1")
+            .setCheck([Number, 'Variable'])
+            .appendField("Add ")
+        this.appendValueInput("number2")
+            .setCheck([Number, 'Variable'])
+            .appendField(" with ");;
+        this.setInputsInline(true);
+        this.setOutput(true);
+        this.setColour("#33cccc");
+    }
+};
+
+Blockly.JavaScript["add_operation2"] = function (block) {
+    let number1 = Blockly.JavaScript.valueToCode(
+        block,
+        "number1",
+        Blockly.JavaScript.ORDER_ADDITION 
+    );
+    let number2 = Blockly.JavaScript.valueToCode(
+        block,
+        "number2",
+        Blockly.JavaScript.ORDER_ADDITION 
+    );
+    let code = `${number1} + ${number2}`;
+    return [code, Blockly.JavaScript.ORDER_ADDITION];
+};
+
+Blockly.Blocks["sub_operation"] = {
+    init: function () {
+        this.appendDummyInput();
+        this.appendValueInput("number1")
+            .setCheck([Number, 'Variable'])
+            .appendField("Subtract ")
+        this.appendValueInput("number2")
+            .setCheck([Number, 'Variable'])
+            .appendField(" with ");;
+        this.setInputsInline(true);
+        this.setOutput(true);
+        this.setColour("#33cccc");
+    }
+};
+
 Blockly.JavaScript["sub_operation"] = function (block) {
     let number1 = Blockly.JavaScript.valueToCode(
         block,
