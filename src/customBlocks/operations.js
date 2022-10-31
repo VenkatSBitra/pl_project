@@ -197,6 +197,37 @@ Blockly.JavaScript["mod_operation"] = function (block) {
     return [code, Blockly.JavaScript.ORDER_MODULUS];
 };
 
+Blockly.Blocks["mod_operation_imporoved"] = {
+    init: function () {
+        this.appendDummyInput();
+        this.appendValueInput("number1")
+            .setCheck([Number, 'Variable'])
+            .appendField("Mod with ")
+        this.appendValueInput("number2")
+            .setCheck([Number, 'Variable'])
+            .appendField(" with ");;
+        this.setInputsInline(true);
+        this.setOutput(true);
+        this.setColour("#44cbcc");
+    }
+};
+
+Blockly.JavaScript["mod_operation_improved"] = function (block) {
+    let number1 = Blockly.JavaScript.valueToCode(
+        block,
+        "number1",
+        Blockly.JavaScript.ORDER_MODULUS
+    );
+    let number2 = Blockly.JavaScript.valueToCode(
+        block,
+        "number2",
+        Blockly.JavaScript.ORDER_MODULUS 
+    );
+    let code = `${number1} % ${number2}`;
+    return [code, Blockly.JavaScript.ORDER_MODULUS];
+};
+
+
 Blockly.Blocks["inc_operation"] = {
     init: function () {
         this.appendDummyInput();
